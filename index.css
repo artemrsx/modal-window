@@ -1,0 +1,9 @@
+.win {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  padding: 0 10%;
+}
