@@ -11,14 +11,16 @@ const myModal = $.modal({
       text: 'OK',
       type: 'primary',
       handler: () => {
-        console.log(`CLICKED ${this.text}`);
+        console.log(`CLICKED OK`);
+        myModal.close();
       }
     },
     {
       text: 'CANCEL',
       type: 'danger',
       handler: () => {
-        console.log(`CLICKED ${this.text}`);
+        console.log(`CLICKED CANCEL`);
+        myModal.close();
       }
     }
   ]

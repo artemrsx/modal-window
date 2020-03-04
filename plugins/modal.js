@@ -10,6 +10,16 @@ const _createFooter = (btns = []) => {
   const wrap = document.createElement('div');
   wrap.classList.add('modal-footer');
 
+  btns.forEach(btn => {
+    const $btn = document.createElement('button');
+    $btn.textContent = btn.text;
+    $btn.classList.add('btn');
+    $btn.classList.add(`btn-${btn.type || 'secondary'}`);
+    $btn.onclick = btn.handler || function() {};
+
+    wrap.appendChild($btn);
+  });
+
   return wrap;
 };
 
@@ -31,10 +41,6 @@ const _createModel = options => {
             </div>
             <div class="modal-content" data-content>
                 ${options.content || ''}
-            </div>
-            <div class="modal-footer">
-                <button>OK</button>
-                <button>Cancel</button>
             </div>
         </div>
     </div>
